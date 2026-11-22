@@ -3,10 +3,10 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Required for Prisma on Vercel
-  serverExternalPackages: ['@prisma/client', 'bcryptjs'],
-  // Output standalone for Docker/serverless (optional)
-  // output: 'standalone',
+  // Required for Prisma on Vercel (Next.js 14 uses experimental key)
+  experimental: {
+    serverComponentsExternalPackages: ['@prisma/client', 'bcryptjs'],
+  },
 };
 
 export default nextConfig;
